@@ -23,4 +23,4 @@ rm *.*
 rm a*.*
 
 # Q8->How to remove non empty directory?
-rm -rf a
+rm -rf newfolder/
