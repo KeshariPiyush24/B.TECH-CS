@@ -4,11 +4,12 @@
  
     THINKING HOW TO RUN THIS FILE AS SCRIPT?
         OPEN YOUR TERMINAL AND TYPE FOLOWING COMMANDS TO RUN THIS FILE AS BASH SCRIPT:
-            ---------->       sh Exercise1.sh
+            ---------->       sh Experiment-1.sh
+            
         THAT'S IT :)
 
 
-MADE BY---->PIYUSH KESHARI(insane_banda)
+    MADE BY---->PIYUSH KESHARI(insane_banda)
 COMMENT
 
 ls #Lists files and directory in current directory
@@ -68,4 +69,4 @@ head blahblah.txt #Displays first 10 lines of the file blahblah.txt
 
 tail blahblah.txt #Displays last 10 lines of the file blahblah.txt
 
-pwd #Prints path of current working directory
+pwd #Prints path of current working directory(aka present working directory)
