@@ -5,10 +5,7 @@
     THINKING HOW TO RUN THIS FILE AS SCRIPT?
         OPEN YOUR TERMINAL AND TYPE FOLOWING COMMANDS TO RUN THIS FILE AS BASH SCRIPT:
             ---------->       sh Exercise-1.sh
-
         THAT'S IT :)
-
-
     MADE BY---->PIYUSH KESHARI(insane_banda)
 COMMENT
 
