@@ -5,5 +5,5 @@ CREATE TABLE CANDIDATE (
     Candidate_Dept CHAR(2) DEFAULT 'HR',
     Manager_ID FLOAT(6),
     CONSTRAINT CHECK (Candidate_Email LIKE '%@%.%'),
-    FOREIGN KEY (Manager_ID) REFERENCES CANDIDATE(Candidate_ID)
+    CONSTRAINT FOREIGN KEY (Manager_ID) REFERENCES CANDIDATE(Candidate_ID)
 );
