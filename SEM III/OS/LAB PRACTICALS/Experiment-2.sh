@@ -1,14 +1,5 @@
 #!/bin/bash
 -------------------------------------------------------------------------------------------------------------------------
-<<COMMENT
-    THINKING HOW TO RUN THIS FILE AS SCRIPT?
-        OPEN YOUR TERMINAL AND TYPE FOLOWING COMMANDS TO RUN THIS FILE AS BASH SCRIPT:
-            ---------->       sh Experiment-2.sh
-            
-        THAT'S IT :)
-    MADE BY---->PIYUSH KESHARI(insane_banda)
-COMMENT
--------------------------------------------------------------------------------------------------------------------------
 cp file1.txt newfolder #Copys file1 to newfolder
 cp file1.txt file2.txt #Copys content of file1 to file2
 cp file1.txt file1.bak #Makes backup file for file1
@@ -52,13 +43,13 @@ COMMENT
     ps -d ----> View all the processes except session leaders
 COMMENT
 -------------------------------------------------------------------------------------------------------------------------
-kill <opt> <ID>
+kill -9 887 #kills process with pID 887 with SIGKILL signal(terminates the process immediately)
 -------------------------------------------------------------------------------------------------------------------------
 bc #Starts a Calculator
 -------------------------------------------------------------------------------------------------------------------------
-top
+top #We all know apout ps command which displays all the running processes which is a snapshot so to see all the running processes and threads interaticelu i.e dynamically then top command is used
 -------------------------------------------------------------------------------------------------------------------------
-grep <str><files>
+grep "Hello world" fiel.txt #displays all the lines containing "Hello world" in it(without quotes)
 -------------------------------------------------------------------------------------------------------------------------
-chmod <opt> <file>
+chmod 777 *.txt #change permissions of all .txt files to 777
 -------------------------------------------------------------------------------------------------------------------------
