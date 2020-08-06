@@ -2,8 +2,8 @@
 SELECT 
     Student.sName, Apply.major
 FROM
-    Student,
-    Apply
+    Student
+    CROSS JOIN Apply
 WHERE
     Student.sID = Apply.sID
 GROUP BY Student.sName , Apply.major;
@@ -28,8 +28,8 @@ GROUP BY Student.sName , Apply.major;
 SELECT 
     Student.sID, Student.sName, Student.GPA, Student.sizeHS
 FROM
-    Student,
-    Apply
+    Student
+    CROSS JOIN Apply
 WHERE
     Student.sID = Apply.sID
         AND Student.sizeHS < 20000
@@ -62,9 +62,9 @@ WHERE
 SELECT 
     *
 FROM
-    Student,
-    Apply,
-    College
+    Student
+    CROSS JOIN Apply
+    CROSS JOIN College
 WHERE
     Student.sID = Apply.sID
         AND Apply.cName = College.collegeName
@@ -94,8 +94,8 @@ ORDER BY Student.sName , Student.sID;
 SELECT 
     Student.sName, Student.GPA
 FROM
-    Student,
-    Apply
+    Student
+    CROSS JOIN Apply
 WHERE
     Student.sID = Apply.sID
         AND Student.sizeHS > 1000
@@ -131,9 +131,9 @@ ORDER BY Student.sName , Student.sID;
 SELECT 
     Student.sName, Student.GPA
 FROM
-    Student,
-    Apply,
-    College
+    Student
+    CROSS JOIN Apply
+    CROSS JOIN College
 WHERE
     Student.sID = Apply.sID
         AND Apply.cName = College.collegeName
