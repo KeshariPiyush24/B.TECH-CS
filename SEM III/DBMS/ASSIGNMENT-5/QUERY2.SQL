@@ -68,12 +68,15 @@ CREATE TABLE ApplicationData
 );
 
 INSERT INTO ApplicationData
-SELECT sID, sName, cName, state
+SELECT STUDENT.sID, sName, APPLY.cName, state
 FROM STUDENT
-         NATURAL JOIN APPLY
-         NATURAL JOIN COLLEGE
-GROUP BY sID, sName, cName, state
+         LEFT JOIN APPLY
+         ON STUDENT.sID = APPLY.sID
+         LEFT JOIN COLLEGE
+         ON APPLY.cName = COLLEGE.cName
+GROUP BY STUDENT.sID, sName, APPLY.cName, state
 ORDER BY sID;
+
 
 
 -- QUERY-24
