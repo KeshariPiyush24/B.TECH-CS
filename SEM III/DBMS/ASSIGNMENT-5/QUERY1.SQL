@@ -11,7 +11,7 @@ WHERE
             FROM
                   APPLY
             WHERE
-                  MAJOR = 'cs'
+                  MAJOR = 'CS'
       );
 
 -- QUERY-2
