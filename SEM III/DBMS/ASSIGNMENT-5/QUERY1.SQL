@@ -192,3 +192,132 @@ HAVING
       );
 
 -- QUERY-11
+SELECT
+      *
+FROM
+      STUDENT
+WHERE
+      SID IN (
+            SELECT
+                  DISTINCT SID
+            FROM
+                  APPLY
+            WHERE
+                  MAJOR = 'CS'
+      )
+      AND SID NOT IN (
+            SELECT
+                  DISTINCT SID
+            FROM
+                  APPLY
+            WHERE
+                  MAJOR = 'EE'
+      );
+
+-- QUERY-12
+SELECT
+      CNAME
+FROM
+      COLLEGE OUTER_TABLE
+WHERE
+      EXISTS (
+            SELECT
+                  *
+            FROM
+                  COLLEGE
+            WHERE
+                  STATE = OUTER_TABLE.STATE
+                  AND CNAME != OUTER_TABLE.CNAME
+      );
+
+-- QUERY-13
+SELECT
+      CNAME
+FROM
+      COLLEGE
+WHERE
+      ENROLLMENT = (
+            SELECT
+                  MAX(ENROLLMENT)
+            FROM
+                  COLLEGE
+      );
+
+-- QUERY-14
+SELECT
+      SNAME
+FROM
+      STUDENT
+WHERE
+      GPA = (
+            SELECT
+                  MIN(GPA)
+            FROM
+                  STUDENT
+      );
+
+-- QUERY-15
+SELECT
+      MAJOR
+FROM
+      (
+            SELECT
+                  MAJOR,
+                  COUNT(*)
+            FROM
+                  APPLY
+            GROUP BY
+                  MAJOR
+            ORDER BY
+                  COUNT(*) DESC
+      )
+WHERE
+      ROWNUM <= 1;
+
+-- QUERY-16
+SELECT
+      SID,
+      SNAME,
+      SIZEHS
+FROM
+      STUDENT
+WHERE
+      SIZEHS != (
+            SELECT
+                  MIN(SIZEHS)
+            FROM
+                  STUDENT
+      );
+
+-- QUERY-17
+SELECT
+      SNAME
+FROM
+      STUDENT
+WHERE
+      SID IN (
+            SELECT
+                  SID
+            FROM
+                  APPLY OUTER_TABLE
+            WHERE
+                  NOT EXISTS (
+                        (
+                              SELECT
+                                    DISTINCT CNAME
+                              FROM
+                                    APPLY
+                              WHERE
+                                    SID = 987
+                        )
+                        MINUS
+                        (
+                              SELECT
+                                    DISTINCT CNAME
+                              FROM
+                                    APPLY
+                              WHERE
+                                    SID = OUTER_TABLE.SID
+                        )
+                  )
+      );
